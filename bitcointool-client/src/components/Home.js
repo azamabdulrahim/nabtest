@@ -79,7 +79,7 @@ class Home extends Component {
           <hr />
           <form onSubmit={this.onSubmit}>
             <div className="form-group text-left">
-              <label for="currency">Currency</label>
+              <label htmlFor="currency">Currency</label>
               <div>
                 <select
                   id="currency"
@@ -96,7 +96,7 @@ class Home extends Component {
               </div>
             </div>
             <div className="form-group text-left">
-              <label for="date">Date</label>
+              <label htmlFor="date">Date</label>
               <input
                 id="date"
                 type="date"
