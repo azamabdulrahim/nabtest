@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BestProfitTable renders correctly with data 1`] = `
+<div>
+  <table
+    className="table table-bordered"
+  >
+    <tbody>
+      <tr>
+        <th
+          colSpan="2"
+        >
+          07/05/2018
+        </th>
+      </tr>
+      <tr
+        className="table-active"
+      >
+        <td
+          colSpan="2"
+        >
+          BTC
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Buy
+        </td>
+        <td>
+          Sell
+        </td>
+      </tr>
+      <tr>
+        <td>
+          $
+          2.30
+        </td>
+        <td>
+          $
+          2.58
+        </td>
+      </tr>
+      <tr>
+        <td>
+          09:30 AM
+        </td>
+        <td>
+          04:30 PM
+        </td>
+      </tr>
+      <tr>
+        <td
+          colSpan="2"
+        >
+          Profit: $
+          0.28
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`BestProfitTable renders correctly with no data 1`] = `<div />`;

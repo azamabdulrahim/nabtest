@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class BestProfit extends Component {
+class BestProfitTable extends Component {
   render() {
     const { data } = this.props;
 
@@ -10,10 +10,10 @@ class BestProfit extends Component {
         <table className="table table-bordered">
           <tbody>
             <tr>
-              <th colspan="2">{data.date}</th>
+              <th colSpan="2">{data.date}</th>
             </tr>
             <tr className="table-active">
-              <td colspan="2">{data.currency}</td>
+              <td colSpan="2">{data.currency}</td>
             </tr>
             <tr>
               <td>Buy</td>
@@ -28,17 +28,15 @@ class BestProfit extends Component {
               <td>{data.sell.time}</td>
             </tr>
             <tr>
-              <td colspan="2">Profit: ${data.profit}</td>
+              <td colSpan="2">Profit: ${data.profit}</td>
             </tr>
           </tbody>
         </table>
       );
-    } else {
-      display = <div>No data</div>;
     }
 
     return <div>{display}</div>;
   }
 }
 
-export default BestProfit;
+export default BestProfitTable;

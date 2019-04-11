@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HistoryTable renders correctly with data 1`] = `
+<div>
+  <table
+    className="table table-bordered"
+  >
+    <tbody>
+      <tr>
+        <th>
+          Currency
+        </th>
+        <th>
+          Date
+        </th>
+        <th>
+          Time
+        </th>
+        <th>
+          Price
+        </th>
+      </tr>
+      <tr>
+        <td>
+          BTC
+        </td>
+        <td>
+          20180507
+        </td>
+        <td>
+          1025
+        </td>
+        <td>
+          2.03
+        </td>
+      </tr>
+      <tr>
+        <td>
+          BTC
+        </td>
+        <td>
+          20180507
+        </td>
+        <td>
+          1200
+        </td>
+        <td>
+          2.45
+        </td>
+      </tr>
+      <tr>
+        <td>
+          BTC
+        </td>
+        <td>
+          20180507
+        </td>
+        <td>
+          1430
+        </td>
+        <td>
+          2.30
+        </td>
+      </tr>
+      <tr>
+        <td>
+          ETC
+        </td>
+        <td>
+          20180507
+        </td>
+        <td>
+          0915
+        </td>
+        <td>
+          1.23
+        </td>
+      </tr>
+      <tr>
+        <td>
+          ETC
+        </td>
+        <td>
+          20180507
+        </td>
+        <td>
+          1130
+        </td>
+        <td>
+          1.45
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`HistoryTable renders correctly with no data 1`] = `<div />`;

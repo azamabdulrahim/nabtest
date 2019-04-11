@@ -1,18 +1,9 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { getHistory } from "../actions/historyActions";
-import PropTypes from "prop-types";
 
-class History extends Component {
-  componentDidMount() {
-    const { refresh, date, currency } = this.props;
-
-    if (refresh) {
-      this.props.getHistory(date, currency);
-    }
-  }
+class HistoryTable extends Component {
   render() {
-    const { history } = this.props.history;
+    const { history } = this.props;
+
     let historyTable;
 
     if (history && history.length > 0) {
@@ -38,26 +29,10 @@ class History extends Component {
           </tbody>
         </table>
       );
-    } else {
-      historyTable = <span>No data</span>;
     }
 
     return <div>{historyTable}</div>;
   }
 }
 
-History.propTypes = {
-  history: PropTypes.object.isRequired,
-  getHistory: PropTypes.func.isRequired,
-  errors: PropTypes.object.isRequired
-};
-
-const mapStateToProps = state => ({
-  history: state.history,
-  errors: state.errors
-});
-
-export default connect(
-  mapStateToProps,
-  { getHistory }
-)(History);
+export default HistoryTable;

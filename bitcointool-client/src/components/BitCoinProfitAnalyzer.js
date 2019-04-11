@@ -1,17 +1,14 @@
 import React, { Component } from "react";
-import BestProfit from "./BestProfit";
-import History from "./History";
-import { getBestProfits } from "../actions/historyActions";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
+import BestProfitContainer from "./BestProfitContainer";
+import HistoryContainer from "./HistoryContainer";
 
-class Home extends Component {
+class BitCoinProfitAnalyzer extends Component {
   constructor() {
     super();
 
     this.state = {
       currency: "",
-      date: null,
+      date: undefined,
       refresh: false
     };
 
@@ -26,48 +23,29 @@ class Home extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    let { date, currency } = this.state;
+    let { date } = this.state;
     if (!date) {
       alert("Please select date");
     } else {
-      date = date.replace(/-/g, "");
-      this.props.getBestProfits(date, currency);
       this.setState({ refresh: true });
     }
   }
 
   render() {
     let { refresh, date, currency } = this.state;
-    const { bestProfits } = this.props.history;
-
     let displayResult;
     if (refresh) {
-      if (bestProfits && bestProfits.length > 0) {
-        date = date.replace(/-/g, "");
-        displayResult = (
-          <div>
-            <p />
-            <h5>History</h5>
-            <History date={date} currency={currency} refresh={refresh} />
-            <p />
-            <h5>Best Profits</h5>
-            {bestProfits.map(data => (
-              <BestProfit key={data.currency} data={data} />
-            ))}
-          </div>
-        );
-      } else {
-        displayResult = (
-          <div>
-            <p />
-            <h5>History</h5>
-            <p>No data</p>
-            <p />
-            <h5>Best Profits</h5>
-            <p>No data</p>
-          </div>
-        );
-      }
+      date = date.replace(/-/g, "");
+      displayResult = (
+        <div>
+          <HistoryContainer date={date} currency={currency} refresh={refresh} />
+          <BestProfitContainer
+            date={date}
+            currency={currency}
+            refresh={refresh}
+          />
+        </div>
+      );
     } else {
       displayResult = <div />;
     }
@@ -75,7 +53,7 @@ class Home extends Component {
     return (
       <div>
         <div className="col-md-4 m-auto">
-          <h5 className="display-4 text-center">Best Profit Calculator</h5>
+          <h1 className="text-center">Best Profit Calculator</h1>
           <hr />
           <form onSubmit={this.onSubmit}>
             <div className="form-group text-left">
@@ -116,18 +94,4 @@ class Home extends Component {
   }
 }
 
-Home.propTypes = {
-  history: PropTypes.object.isRequired,
-  getBestProfits: PropTypes.func.isRequired,
-  errors: PropTypes.object.isRequired
-};
-
-const mapStateToProps = state => ({
-  history: state.history,
-  errors: state.errors
-});
-
-export default connect(
-  mapStateToProps,
-  { getBestProfits }
-)(Home);
+export default BitCoinProfitAnalyzer;

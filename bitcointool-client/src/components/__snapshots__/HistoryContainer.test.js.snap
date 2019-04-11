@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HistoryContainer calls getHistory function and renders child components when refresh is true 1`] = `
+<div>
+  <p />
+  <h2>
+    Price History
+  </h2>
+  <HistoryTable
+    history={
+      Array [
+        Object {
+          "currency": "BTC",
+          "date": "20180705",
+          "quotes": Array [
+            Object {
+              "price": "2.30",
+              "time": "09:30 AM",
+            },
+          ],
+        },
+        Object {
+          "currency": "ETC",
+          "date": "07/05/2018",
+          "quotes": Array [
+            Object {
+              "price": "1.30",
+              "time": "08:30 AM",
+            },
+            Object {
+              "price": "1.50",
+              "time": "12:30 PM",
+            },
+          ],
+        },
+      ]
+    }
+  />
+</div>
+`;
+
+exports[`HistoryContainer renders correctly when refresh is false 1`] = `
+<div>
+  <p />
+  <h2>
+    Price History
+  </h2>
+  <span>
+    No data
+  </span>
+</div>
+`;
+
+exports[`HistoryContainer renders correctly when refresh is true but currency not supplied 1`] = `
+<div>
+  <p />
+  <h2>
+    Price History
+  </h2>
+  <span>
+    No data
+  </span>
+</div>
+`;
+
+exports[`HistoryContainer renders correctly when refresh is true but date and currency not supplied 1`] = `
+<div>
+  <p />
+  <h2>
+    Price History
+  </h2>
+  <span>
+    No data
+  </span>
+</div>
+`;
+
+exports[`HistoryContainer renders correctly when refresh is true but date not supplied 1`] = `
+<div>
+  <p />
+  <h2>
+    Price History
+  </h2>
+  <span>
+    No data
+  </span>
+</div>
+`;
