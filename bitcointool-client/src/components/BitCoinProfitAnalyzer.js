@@ -53,7 +53,7 @@ class BitCoinProfitAnalyzer extends Component {
     return (
       <div>
         <div className="col-md-4 m-auto">
-          <h1 className="text-center">Best Profit Calculator</h1>
+          <h1 className="text-center">BitCoin Profit Analyzer</h1>
           <hr />
           <form onSubmit={this.onSubmit}>
             <div className="form-group text-left">
