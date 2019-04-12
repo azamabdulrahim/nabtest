@@ -8,7 +8,7 @@ export class BestProfitContainer extends Component {
   componentDidMount() {
     const { refresh, date, currency } = this.props;
 
-    if (refresh && date && currency) {
+    if (refresh && date) {
       this.props.getBestProfits(date, currency);
     }
   }

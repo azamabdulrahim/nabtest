@@ -73,7 +73,7 @@ describe("HistoryContainer", () => {
     expect(wrapper).toMatchSnapshot();
     expect(wrapper.find("div").length).toEqual(1);
     expect(wrapper.containsMatchingElement(<span>No data</span>)).toBeTruthy();
-    expect(mockGetHistory.mock.calls.length).toBe(0);
+    expect(mockGetHistory.mock.calls.length).toBe(1);
   });
 
   it("calls getHistory function and renders child components when refresh is true", () => {

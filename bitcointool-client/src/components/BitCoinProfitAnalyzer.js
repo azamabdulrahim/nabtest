@@ -25,7 +25,7 @@ class BitCoinProfitAnalyzer extends Component {
     e.preventDefault();
     let { date } = this.state;
     if (!date) {
-      alert("Please select date");
+      //alert("Please select date");
     } else {
       this.setState({ refresh: true });
     }
@@ -37,7 +37,7 @@ class BitCoinProfitAnalyzer extends Component {
     if (refresh) {
       date = date.replace(/-/g, "");
       displayResult = (
-        <div>
+        <div id="results" className="table-responsive">
           <HistoryContainer date={date} currency={currency} refresh={refresh} />
           <BestProfitContainer
             date={date}
@@ -82,6 +82,7 @@ class BitCoinProfitAnalyzer extends Component {
                 name="date"
                 value={this.state.date}
                 onChange={this.onChange}
+                required
               />
             </div>
 

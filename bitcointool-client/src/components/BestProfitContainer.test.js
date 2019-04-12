@@ -69,7 +69,7 @@ describe("BestProfitContainer", () => {
     expect(wrapper).toMatchSnapshot();
     expect(wrapper.find("div").length).toEqual(1);
     expect(wrapper.containsMatchingElement(<p>No data</p>)).toBeTruthy();
-    expect(mockGetBestProfits.mock.calls.length).toBe(0);
+    expect(mockGetBestProfits.mock.calls.length).toBe(1);
   });
 
   it("calls getBestProfits function and renders child components when refresh is true", () => {
